@@ -40,8 +40,10 @@ def update_embedding_create_vector_index(graph, chunkId_chunkDoc_list, file_name
     #create embedding
     isEmbedding = os.getenv('IS_EMBEDDING')
     embedding_model = os.getenv('EMBEDDING_MODEL')
+
     
     embeddings, dimension = load_embedding_model(embedding_model)
+    logging.info(f'embedding model var is {embedding_model}')
     logging.info(f'embedding model:{embeddings} and dimesion:{dimension}')
     data_for_query = []
     logging.info(f"update embedding and vector index for chunks")
