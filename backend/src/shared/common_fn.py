@@ -11,6 +11,7 @@ import re
 import os
 from pathlib import Path
 from neo4j.debug import watch
+import json
 
 #watch("neo4j")
 
@@ -49,6 +50,7 @@ def get_combined_chunks(chunkId_chunkDoc_list):
     
     for i in range(len(combined_chunks_page_content)):
          combined_chunk_document_list.append(Document(page_content=combined_chunks_page_content[i], metadata={"combined_chunk_ids":combined_chunks_ids[i]}))
+    
     return combined_chunk_document_list
 
 

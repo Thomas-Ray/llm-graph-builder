@@ -2,6 +2,8 @@ version: "3"
 
 services:
   backend:
+    env_file:
+      - ./backend/.env
     #    env_file:
     #      - path: ./backend/.env
     #        required: false
@@ -18,7 +20,7 @@ services:
       - DIFFBOT_API_KEY=${DIFFBOT_API_KEY-}
       - EMBEDDING_MODEL=${EMBEDDING_MODEL-openai}
       - LANGCHAIN_ENDPOINT=${LANGCHAIN_ENDPOINT-"https://api.smith.langchain.com"}
-      - LANGCHAIN_TRACING_V2=${LANGCHAIN_TRACING_V2-true}
+      - LANGCHAIN_TRACING_V2=${LANGCHAIN_TRACING_V2-false}
       - LANGCHAIN_PROJECT=${LANGCHAIN_PROJECT}
       - LANGCHAIN_API_KEY=${LANGCHAIN_API_KEY}
       - KNN_MIN_SCORE = ${KNN_MIN_SCORE-"0.94"}

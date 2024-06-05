@@ -462,7 +462,8 @@ def get_graph_from_OpenAI(model_version, graph, chunkId_chunkDoc_list, allowedNo
     graph_document_list=[]
         
     combined_chunk_document_list = get_combined_chunks(chunkId_chunkDoc_list)
-    
+    # added for testing
+
     llm = ChatOpenAI(model= model_version, temperature=0)
     llm_transformer = LLMGraphTransformer(llm=llm, allowed_nodes=allowedNodes, allowed_relationships=allowedRelationship)
     
